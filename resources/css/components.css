@@ -1,0 +1,27 @@
+.w-all-pantalla{
+    @apply w-screen h-screen
+}
+
+.w-x-defecto{
+    @apply max-w-5xl mx-auto
+}
+
+.row{
+    @apply flex flex-row
+}
+
+.col{
+    @apply flex flex-col
+}
+
+.row-reverse{
+    @apply flex flex-row-reverse
+}
+
+.col-reverse{
+    @apply flex flex-col-reverse
+}
+
+.center-content{
+    @apply flex justify-center items-center
+}
