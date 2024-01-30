@@ -1,0 +1,31 @@
+html{scroll-behavior: smooth;}
+
+/* Scroll bar minimalista */
+@media(min-width: 1024px){
+    .scrollbar::-webkit-scrollbar {
+        -webkit-appearance: none;
+    }
+
+    .scrollbar::-webkit-scrollbar:vertical {
+        width:8px;
+        background-color: white;
+    }
+
+    .scrollbar::-webkit-scrollbar-button:increment,.scrollbar::-webkit-scrollbar-button {
+        display: none;
+    }
+
+    .scrollbar::-webkit-scrollbar:horizontal {
+        height: 10px;
+    }
+
+    .scrollbar::-webkit-scrollbar-thumb {
+        background-color: #64748b;
+        border-radius: 9999px;
+        border: 2px solid #64748b;
+    }
+
+    .scrollbar::-webkit-scrollbar-track {
+        border-radius: 10px;
+    }
+}
