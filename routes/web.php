@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Middleware\LocaleCookieMiddleware;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Redirect;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +15,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+/* TRANSLATE - EN -> ES */
+Route::get('locale/{locale}', function ($locale){
+    session()->put('locale', $locale);
+
+    return Redirect::back();
+ });
+
 Route::get('/', function () {
-    return view('welcome');
+    return view('layout/app');
 });
