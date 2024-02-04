@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,14 +9,19 @@
     <!-- Fuentes -->
     <link href="https://fonts.cdnfonts.com/css/poppins" rel="stylesheet">
 
-    <!-- Styles -->
+    <!-- Scripts -->
     @vite(['resources/css/app.css', 'resource/js/app.js'])
+
+    <!-- Styles -->
+    @livewireStyles
 </head>
 <body style="font-family: 'Poppins', sans-serif;" class="scrollbar">
-    <main class="w-full">
-        <x-nav/>
+    <x-nav/>
 
-        <p class="text-red-500">{{ __('Hello') }}</p>
+    <main class="w-full">
+        {{ $slot }}
     </main>
+
+    @livewireScripts
 </body>
 </html>

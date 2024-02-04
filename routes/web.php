@@ -22,6 +22,4 @@ Route::get('locale/{locale}', function ($locale){
     return Redirect::back();
  });
 
-Route::get('/', function () {
-    return view('layout/app');
-});
+Route::view('/', 'main');
