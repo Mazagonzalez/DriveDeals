@@ -8,7 +8,6 @@
 </head>
 <body>
 
-    @dump($errors)
     <form action="/register" method="POST">
         @csrf
         nombre
