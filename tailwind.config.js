@@ -8,34 +8,39 @@ export default {
     theme: {
         extend: {
             colors: {
-                'primary': '#5F78F4',
-                'secondary': '#9fb4feff',
+                'primary': '#6225E6',
+                'secondary': '#FBC638',
                 'slate-main': '#efeff1'
             },
             backgroundColor: {
-                'primary': '#5F78F4',
-                'secondary': '#9fb4feff',
+                'primary': '#6225E6',
+                'secondary': '#FBC638',
                 'slate-main': '#efeff1'
             },
             borderColor: {
-                'primary': '#5F78F4',
-                'secondary': '#9fb4feff',
+                'primary': '#6225E6',
+                'secondary': '#FBC638',
                 'slate-main': '#efeff1'
             },
             divideColor: {
-                'primary': '#5F78F4',
-                'secondary': '#9fb4feff',
+                'primary': '#6225E6',
+                'secondary': '#FBC638',
                 'slate-main': '#efeff1'
             },
             fill: {
-                'primary': '#5F78F4',
-                'secondary': '#9fb4feff',
+                'primary': '#6225E6',
+                'secondary': '#FBC638',
                 'slate-main': '#efeff1'
             },
             stroke: {
-                'primary': '#5F78F4',
-                'secondary': '#9fb4feff',
+                'primary': '#6225E6',
+                'secondary': '#FBC638',
                 'slate-main': '#efeff1'
+            },
+            boxShadow: {
+                'button': '6px 6px 0 black',
+                'button-h': '10px 10px 0 #FBC638',
+                'input': '7px 7px 0px 0px black'
             }
 
         },

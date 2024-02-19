@@ -1,10 +1,10 @@
 /* Form */
 .input-form{
-    @apply w-full bg-slate-main focus:ring-primary px-6 py-2 rounded-full border-none focus:ring-[3px] outline-none
+    @apply w-full bg-transparent shadow-input h-[40px] px-4 outline-none focus:shadow-none transition-[0.5s] border-r-[3px] border-l-[3px] border-black focus:border-t-[3px] focus:border-b-[3px] skew-x-[-15deg] focus:border-primary
 }
 
 .btn-form{
-    @apply px-8 py-2.5 bg-primary hover:bg-secondary text-white rounded-full font-bold cursor-pointer
+    @apply px-8 py-3 text-white bg-primary transition-[1s] shadow-button skew-x-[-15deg] outline-none hover:transition-[0.5s] hover:shadow-button-h
 }
 
 .eye-form{
