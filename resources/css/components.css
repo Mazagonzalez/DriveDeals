@@ -1,3 +1,17 @@
+/* Form */
+.input-form{
+    @apply w-full bg-slate-main focus:ring-primary px-6 py-2 rounded-full border-none focus:ring-[3px] outline-none
+}
+
+.btn-form{
+    @apply px-8 py-2.5 bg-primary hover:bg-secondary text-white rounded-full font-bold cursor-pointer
+}
+
+.eye-form{
+    @apply w-[24px] h-[24px] stroke-primary cursor-pointer
+}
+
+/* Size Screen */
 .w-all-pantalla{
     @apply w-screen h-screen
 }
@@ -6,6 +20,7 @@
     @apply max-w-5xl mx-auto
 }
 
+/* flex box */
 .row{
     @apply flex flex-row
 }

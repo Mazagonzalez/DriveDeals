@@ -6,8 +6,8 @@ use Illuminate\Http\Request;
 
 class Homecontroller extends Controller
 {
-    public function index()
+    public function render()
     {
-        return view('home.index');
+        return view('main');
     }
 }
