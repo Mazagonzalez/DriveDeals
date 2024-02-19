@@ -1,3 +1,10 @@
 {
-    "Hello": "Hola"
+    "Hello": "Hola",
+    "Login": "Iniciar Sesión",
+    "Email": "Correo electrónico",
+    "Password": "Contraseña",
+    "Don't have an account yet?": "¿Aún no tienes cuenta?",
+    "Create Account": "Crear cuenta",
+    "See password": "Ver contraseña",
+    "Hide password": "Ocultar contraseña"
 }
