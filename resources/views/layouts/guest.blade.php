@@ -17,7 +17,11 @@
 </head>
 <body style="font-family: 'Poppins', sans-serif;" class="scrollbar">
     <main class="w-screen h-screen">
+        <x-utils.form.lang />
+
         {{ $slot }}
+
+        <x-utils.form.right />
     </main>
 
     @livewireScripts

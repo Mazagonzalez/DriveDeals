@@ -1,8 +1,6 @@
 <x-guest-layout>
-    <div class="relative w-full h-full bg-center bg-cover" style="background-image: url('{{ asset('dist/img/login.jpg') }}')">
-        <div class="z-10 w-full h-full bg-gradient-to-t from-black via-black/50 to-black/40 backdrop-blur-sm"></div>
-
-        <div class="fixed p-4 lg:p-10 -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 bg-white/75 rounded-3xl w-[90%] lg:w-[410px] col gap-14">
+    <div class="w-full h-full pt-20 bg-center bg-cover lg:pt-0" style="background-image: url('{{ asset('dist/img/bg-form.jpg') }}')">
+        <div class="mx-auto p-4 lg:p-10 bg-white/75 rounded-3xl w-[90%] lg:w-[410px] relative lg:-translate-y-1/2 lg:top-1/2 col gap-14">
             <div class="center-content">
                 <img src="{{ asset('dist/img/logo.png') }}" class="w-[80%] select-none">
             </div>
