@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Pokedex</title>
 
     <!-- Fuentes -->
     <link href="https://fonts.cdnfonts.com/css/poppins" rel="stylesheet">
@@ -16,11 +16,12 @@
     @livewireStyles
 </head>
 <body style="font-family: 'Poppins', sans-serif;" class="scrollbar">
-    <x-nav/>
+    <main class="w-screen h-screen">
+        <x-utils.form.lang />
 
-    <main class="w-full">
-        <!--correccion de no lectura en vista padre-->
-        @yield('content')
+        {{ $slot }}
+
+        <x-utils.form.right />
     </main>
 
     @livewireScripts
