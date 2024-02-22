@@ -37,10 +37,10 @@ class Homecontroller extends Controller
     } catch (\Exception $e) {
         // Si ocurre una excepcion se pondra por defecto un pikachu y un mensaje de error
         $errorMessage = "Lo siento, ese nombre de Pokemon no existe. ¡Mira un Pikachu!";
-        return view('main', compact('pokemon', 'errorMessage'));
+        return view('livewire.dashboard', compact('pokemon', 'errorMessage'));
     }
 
     // Si el Pokémon se encuentra, mostrara la informacion
-    return view('main', compact('pokemon'));
+    return view('livewire.dashboard', compact('pokemon'));
 }
 }
