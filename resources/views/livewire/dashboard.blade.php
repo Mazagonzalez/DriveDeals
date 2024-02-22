@@ -2,8 +2,13 @@
 
 @section('content')
     <div>
+        <h1>Search Pokémon</h1>
+        <!-- Búsqueda -->
+        <form method="GET" action="{{ route('home') }}">
+            <input type="text" name="searchTerm" placeholder="Enter Pokémon name or number">
+            <button type="submit">Search</button>
+        </form>
         <h1>Pokémon Gallery</h1>
-
         <div>
             @foreach ($pokemonList as $pokemon)
                 <div>
@@ -33,11 +38,11 @@
 
         <div>
             @if ($page > 1)
-                <a href="{{ route('home', ['page' => $page - 1]) }}">Previous</a>
+                <a href="{{ route('home', ['page' => $page - 1, 'searchTerm' => $searchTerm]) }}">Previous</a>
             @endif
 
             @if (count($pokemonList) >= 9)
-                <a href="{{ route('home', ['page' => $page + 1]) }}">Next</a>
+                <a href="{{ route('home', ['page' => $page + 1, 'searchTerm' => $searchTerm]) }}">Next</a>
             @endif
         </div>
     </div>
