@@ -3,6 +3,7 @@
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\HomeController;
+use App\Livewire\Dashboard;
 use App\Http\Middleware\LocaleCookieMiddleware;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Redirect;
@@ -33,6 +34,6 @@ Route::get('locale/{locale}', function ($locale){
 
  Route::post('/login', [LoginController::class, 'login']);
 
- Route::get('/home', [HomeController::class, 'pokedex'])->name('home');
+ Route::get('/home', [Dashboard::class, 'pokedex'])->name('home');
 
 
