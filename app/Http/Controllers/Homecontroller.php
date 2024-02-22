@@ -22,21 +22,25 @@ class Homecontroller extends Controller
 {
     $pokemonName = $request->input('pokemonName');
 
-    try {
-        $pokemon = $this->pokedexService->getPokemon($pokemonName);
+    // Inicializar $pokemon con los detalles de Pikachu por defecto
+    $pokemon = $this->pokedexService->getPokemon('pikachu');
 
-        if (!$pokemon) {
-            // Si no se encuentra el Pokemon, lanzara una excepción manualmente
-            throw new \Exception('Pokémon not found');
+    try {
+        if ($pokemonName) {
+            $pokemon = $this->pokedexService->getPokemon($pokemonName);
+
+            if (!$pokemon) {
+                // Si no se encuentra el Pokemon, lanzara una excepción manualmente
+                throw new \Exception('Pokémon not found');
+            }
         }
     } catch (\Exception $e) {
-        // Si ocurre una excepción se ponddra por defecto un pikachu y un mensaje de error
-        $pokemon = $this->pokedexService->getPokemon('pikachu');
+        // Si ocurre una excepcion se pondra por defecto un pikachu y un mensaje de error
         $errorMessage = "Lo siento, ese nombre de Pokemon no existe. ¡Mira un Pikachu!";
         return view('main', compact('pokemon', 'errorMessage'));
     }
 
-    // Si el Pokemon se encuentra, mostrara la información de manera normal
+    // Si el Pokémon se encuentra, mostrara la informacion
     return view('main', compact('pokemon'));
 }
 }
