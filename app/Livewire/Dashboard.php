@@ -35,21 +35,24 @@ class Dashboard extends Component
     try {
         // Si se proporciona un término de búsqueda, obtener los detalles de los Pokémon que coincidan
         if ($searchTerm) {
-            // Obtener los detalles de los Pokémon que coinciden con el término de búsqueda
-            for ($i = 1; count($pokemonList) < 9; $i++) {
-                $pokemon = $this->pokedexService->getPokemon($i);
-                // Verificar si el nombre del Pokémon contiene el término de búsqueda
-                if (strpos(strtolower($pokemon['name']), strtolower($searchTerm)) !== false) {
-                    $pokemonList[] = $pokemon;
+            // Si el término de búsqueda es una letra, buscar los Pokémon cuyo nombre comienza con esa letra
+            if (ctype_alpha($searchTerm)) {
+                // Obtener los detalles de los Pokémon cuyo nombre comienza con la letra especificada
+                for ($i = 1; count($pokemonList) < 9; $i++) {
+                    $pokemon = $this->pokedexService->getPokemon($i);
+                    // Verificar si el nombre del Pokémon comienza con la letra de búsqueda
+                    if (strtolower(substr($pokemon['name'], 0, 1)) === strtolower($searchTerm)) {
+                        $pokemonList[] = $pokemon;
+                    }
                 }
-                // Verificar si el número del Pokémon coincide con el término de búsqueda
-                if (strpos($i, $searchTerm) === 0) {
-                    $pokemonList[] = $pokemon;
-                }
+            } else {
+                // Si el término de búsqueda no es una letra, no realizar la búsqueda
+                $errorMessage = "La búsqueda debe ser por una letra única.";
+                return view('livewire.dashboard', compact('pokemonList', 'errorMessage', 'page'));
             }
         } else {
             // Si no se proporciona ningún término de búsqueda, obtener los detalles de los Pokémon en el rango de índices calculado
-            for ($i = $startIndex + 1; $i <= $endIndex + 1; $i++) {
+            for ($i = $startIndex + 1; count($pokemonList) < 9; $i++) {
                 $pokemon = $this->pokedexService->getPokemon($i);
                 if ($pokemon) {
                     $pokemonList[] = $pokemon;
@@ -66,6 +69,7 @@ class Dashboard extends Component
     return view('livewire.dashboard', compact('pokemonList', 'page', 'searchTerm'));
 
 }
+
 
 
 }
