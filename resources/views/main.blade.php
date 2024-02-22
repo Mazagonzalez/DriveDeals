@@ -9,29 +9,31 @@
             <button type="submit">Search</button>
         </form>
 
+        @isset($errorMessage)
+            <div class="alert alert-danger">{{ $errorMessage }}</div>
+        @endisset
+
         @if(isset($pokemon))
-        <h2>{{ $pokemon['name'] }}</h2>
-        <p>Height: {{ $pokemon['height'] }}</p>
-        <p>Weight: {{ $pokemon['weight'] }}</p>
+            <h2>{{ $pokemon['name'] }}</h2>
+            <p>Height: {{ $pokemon['height'] }}</p>
+            <p>Weight: {{ $pokemon['weight'] }}</p>
 
-        <!-- Mostrar habilidades -->
-        <h3>Abilities:</h3>
-        <ul>
-            @foreach ($pokemon['abilities'] as $ability)
-                <li>{{ $ability['ability']['name'] }}</li>
-            @endforeach
-        </ul>
+            <!-- Mostrar habilidades -->
+            <h3>Abilities:</h3>
+            <ul>
+                @foreach ($pokemon['abilities'] as $ability)
+                    <li>{{ $ability['ability']['name'] }}</li>
+                @endforeach
+            </ul>
 
-        <!-- Mostrar tipos -->
-        <h3>Types:</h3>
-        <ul>
-            @foreach ($pokemon['types'] as $type)
-                <li>{{ $type['type']['name'] }}</li>
-            @endforeach
-        </ul>
-    @else
-        <p>No Pokémon found.</p>
-    @endif
+            <!-- Mostrar tipos -->
+            <h3>Types:</h3>
+            <ul>
+                @foreach ($pokemon['types'] as $type)
+                    <li>{{ $type['type']['name'] }}</li>
+                @endforeach
+            </ul>
+        @endif
     </div>
 @endsection
 
