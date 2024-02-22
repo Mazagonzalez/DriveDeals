@@ -19,7 +19,8 @@
     <x-nav/>
 
     <main class="w-full">
-        {{ $slot }}
+        <!--correccion de no lectura en vista padre-->
+        @yield('content')
     </main>
 
     @livewireScripts

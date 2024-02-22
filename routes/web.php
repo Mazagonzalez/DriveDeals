@@ -33,4 +33,6 @@ Route::get('locale/{locale}', function ($locale){
 
  Route::post('/login', [LoginController::class, 'login']);
 
- Route::get('/home', [HomeController::class, 'render']);
+ Route::get('/home', [HomeController::class, 'pokedex'])->name('home');
+
+
