@@ -19,27 +19,31 @@ class Dashboard extends Component
     //metodo pokedex
     public function pokedex(Request $request)
 {
-    $pokemonName = $request->input('pokemonName');
+    // Obtener el número de página actual desde la solicitud
+    $page = $request->input('page', 1);
 
-    // Inicializar $pokemon con los detalles de Pikachu por defecto
-    $pokemon = $this->pokedexService->getPokemon('pikachu');
+    // Calcular el índice inicial y final de los Pokémon a mostrar en esta página
+    $startIndex = ($page - 1) * 9;
+    $endIndex = $startIndex + 8;
+
+    // Inicializar $pokemonList como un arreglo vacío
+    $pokemonList = [];
 
     try {
-        if ($pokemonName) {
-            $pokemon = $this->pokedexService->getPokemon($pokemonName);
-
-            if (!$pokemon) {
-                // Si no se encuentra el Pokemon, lanzara una excepción manualmente
-                throw new \Exception('Pokémon not found');
+        // Obtener los detalles de los Pokémon en el rango de índices calculado
+        for ($i = $startIndex + 1; $i <= $endIndex + 1; $i++) {
+            $pokemon = $this->pokedexService->getPokemon($i);
+            if ($pokemon) {
+                $pokemonList[] = $pokemon;
             }
         }
     } catch (\Exception $e) {
-        // Si ocurre una excepcion se pondra por defecto un pikachu y un mensaje de error
-        $errorMessage = "Lo siento, ese nombre de Pokemon no existe. ¡Mira un Pikachu!";
-        return view('livewire.dashboard', compact('pokemon', 'errorMessage'));
+        // Manejar la excepción si ocurre algún error al obtener los detalles del Pokémon
+        $errorMessage = "Lo siento, ha ocurrido un error al obtener los detalles del Pokémon.";
+        return view('livewire.dashboard', compact('pokemonList', 'errorMessage'));
     }
 
-    // Si el Pokémon se encuentra, mostrara la informacion
-    return view('livewire.dashboard', compact('pokemon'));
+    // Si se obtienen los detalles del Pokémon correctamente, mostrar la vista con la lista de Pokémon
+    return view('livewire.dashboard', compact('pokemonList', 'page'));
 }
 }

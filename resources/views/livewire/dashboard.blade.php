@@ -1,45 +1,45 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container">
-        <h1>Search Pokémon</h1>
-        <!-- Busqueda -->
-        <form method="GET" action="{{ route('home') }}">
-            <input type="text" name="pokemonName" placeholder="Enter Pokémon name or number">
-            <button type="submit">Search</button>
-        </form>
+    <div>
+        <h1>Pokémon Gallery</h1>
 
-        @isset($errorMessage)
-            <div class="alert alert-danger">{{ $errorMessage }}</div>
-        @endisset
+        <div>
+            @foreach ($pokemonList as $pokemon)
+                <div>
+                    <img src="{{ $pokemon['sprites']['front_default'] }}" alt="{{ $pokemon['name'] }}">
+                    <h3>{{ $pokemon['name'] }}</h3>
+                    <p>Height: {{ $pokemon['height'] }}</p>
+                    <p>Weight: {{ $pokemon['weight'] }}</p>
 
-        @isset($errorMessage)
-            <div class="alert alert-danger">{{ $errorMessage }}</div>
-        @endisset
+                     <!-- Mostrar habilidades -->
+                    <h3>Abilities:</h3>
+                    <ul>
+                        @foreach ($pokemon['abilities'] as $ability)
+                          <li>{{ $ability['ability']['name'] }}</li>
+                        @endforeach
+                    </ul>
 
-        @if(isset($pokemon))
-            <h2>{{ $pokemon['name'] }}</h2>
-            <p>Height: {{ $pokemon['height'] }}</p>
-            <p>Weight: {{ $pokemon['weight'] }}</p>
+                    <!-- Mostrar tipos -->
+                    <h3>Types:</h3>
+                    <ul>
+                        @foreach ($pokemon['types'] as $type)
+                            <li>{{ $type['type']['name'] }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endforeach
+        </div>
 
-            <!-- Mostrar la imagen del Pokémon -->
-            <img src="{{ $pokemon['sprites']['front_default'] }}" alt="{{ $pokemon['name'] }}">
+        <div>
+            @if ($page > 1)
+                <a href="{{ route('home', ['page' => $page - 1]) }}">Previous</a>
+            @endif
 
-            <!-- Mostrar habilidades -->
-            <h3>Abilities:</h3>
-            <ul>
-                @foreach ($pokemon['abilities'] as $ability)
-                    <li>{{ $ability['ability']['name'] }}</li>
-                @endforeach
-            </ul>
-
-            <!-- Mostrar tipos -->
-            <h3>Types:</h3>
-            <ul>
-                @foreach ($pokemon['types'] as $type)
-                    <li>{{ $type['type']['name'] }}</li>
-                @endforeach
-            </ul>
-        @endif
+            @if (count($pokemonList) >= 9)
+                <a href="{{ route('home', ['page' => $page + 1]) }}">Next</a>
+            @endif
+        </div>
     </div>
 @endsection
+
