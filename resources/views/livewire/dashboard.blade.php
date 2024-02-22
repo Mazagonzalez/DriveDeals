@@ -13,10 +13,17 @@
             <div class="alert alert-danger">{{ $errorMessage }}</div>
         @endisset
 
+        @isset($errorMessage)
+            <div class="alert alert-danger">{{ $errorMessage }}</div>
+        @endisset
+
         @if(isset($pokemon))
             <h2>{{ $pokemon['name'] }}</h2>
             <p>Height: {{ $pokemon['height'] }}</p>
             <p>Weight: {{ $pokemon['weight'] }}</p>
+
+            <!-- Mostrar la imagen del Pokémon -->
+            <img src="{{ $pokemon['sprites']['front_default'] }}" alt="{{ $pokemon['name'] }}">
 
             <!-- Mostrar habilidades -->
             <h3>Abilities:</h3>
