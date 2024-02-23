@@ -27,7 +27,7 @@
                         @endforeach
                     </div>
                     <div class="skew-x-6 center-content" >
-                        <img src="{{ $pokemon['sprites']['front_default'] }}" alt="{{ $pokemon['name'] }}" class="w-[200px] h-[200px]">
+                        <img src="{{ $pokemon['sprites']['front_default'] }}" alt="{{ $pokemon['name'] }}" class="w-[200px] h-[200px]" loading="lazy">
                     </div>
                 </div>
 
