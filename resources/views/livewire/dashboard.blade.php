@@ -6,7 +6,7 @@
         <form method="GET" action="{{ route('home') }}">
             <div class="items-center gap-4 px-8 py-4 row bg-white/75">
                 <div class="relative w-1/2 row">
-                    <input type="text" name="searchTerm" class="w-full input-form" style="transition: all 0.5s;">
+                    <input type="text" name="searchTerm" class="w-full input-form" style="transition: all 0.5s;" autocomplete="off">
                     <button type="submit" class="absolute h-full px-8 bg-primary text-white skew-x-[-15deg] right-0">{{ __('Search') }}</button>
                 </div>
 
