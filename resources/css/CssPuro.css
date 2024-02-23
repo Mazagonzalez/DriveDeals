@@ -29,3 +29,8 @@ html{scroll-behavior: smooth;}
         border-radius: 10px;
     }
 }
+
+.card-pokemon:hover img{
+    transform: scale(1.2);
+    transition: all 0.5s;
+}

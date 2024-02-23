@@ -10,32 +10,32 @@ export default {
             colors: {
                 'primary': '#6225E6',
                 'secondary': '#FBC638',
-                'slate-main': '#efeff1'
+                'dark': '#333333ff'
             },
             backgroundColor: {
                 'primary': '#6225E6',
                 'secondary': '#FBC638',
-                'slate-main': '#efeff1'
+                'dark': '#333333ff'
             },
             borderColor: {
                 'primary': '#6225E6',
                 'secondary': '#FBC638',
-                'slate-main': '#efeff1'
+                'dark': '#333333ff'
             },
             divideColor: {
                 'primary': '#6225E6',
                 'secondary': '#FBC638',
-                'slate-main': '#efeff1'
+                'dark': '#333333ff'
             },
             fill: {
                 'primary': '#6225E6',
                 'secondary': '#FBC638',
-                'slate-main': '#efeff1'
+                'dark': '#333333ff'
             },
             stroke: {
                 'primary': '#6225E6',
                 'secondary': '#FBC638',
-                'slate-main': '#efeff1'
+                'dark': '#333333ff'
             },
             boxShadow: {
                 'button': '6px 6px 0 black',
