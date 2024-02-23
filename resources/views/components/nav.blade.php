@@ -1,5 +1,8 @@
 <div id="nav" class="z-50 flex justify-center" style="background-color: rgb(59, 130, 246)">
     <div class="shadow-input row">
+        <a href="{{ route('home') }}" class="px-5 py-2 cursor-pointer bg-slate-800 hover:bg-white fill-white hover:fill-slate-800">
+            <x-utils.icons.home  style="w-5 h-5" />
+        </a>
         <div class="px-5 py-2 bg-secondary">
             <div class="gap-5 row">
                 <p class="text-sm w-[75px] text-center font-semibold">{{ __('Language') }}</p>
