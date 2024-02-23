@@ -11,6 +11,16 @@
     @apply w-[24px] h-[24px] stroke-primary cursor-pointer
 }
 
+/* Buttons */
+.btn-continue{
+    @apply h-10 w-10 bg-primary rounded-full hover:bg-secondary hover:shadow-input text-white flex justify-center items-center text-xl font-bold
+}
+
+/* Cards */
+.card-pokemon{
+    @apply  hover:shadow-button -skew-x-6 h-fit bg-primary/30 hover:bg-primary border-[8px] border-secondary/50 hover:border-secondary cursor-pointer z-10 relative
+}
+
 /* Size Screen */
 .w-all-pantalla{
     @apply w-screen h-screen

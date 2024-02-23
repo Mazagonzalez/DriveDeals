@@ -18,9 +18,13 @@
 <body style="font-family: 'Poppins', sans-serif;" class="scrollbar">
     <x-nav/>
 
-    <main class="w-full">
+    <main class="w-full bg-slate-800">
+        <x-utils.head-app />
+
         <!--correccion de no lectura en vista padre-->
-        @yield('content')
+        <div class="max-w-5xl pb-6 mx-auto">
+            @yield('content')
+        </div>
     </main>
 
     @livewireScripts
